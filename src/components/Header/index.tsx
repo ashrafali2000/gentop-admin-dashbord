@@ -5,11 +5,14 @@ import DropdownNotification from "./DropdownNotification";
 import DropdownUser from "./DropdownUser";
 import Image from "next/image";
 import WalletButton from "../WalletButton/walletButton";
-
+import SidebarItem from "../Sidebar/SidebarItem";
+import useLocalStorage from "@/hooks/useLocalStorage";
 const Header = (props: {
   sidebarOpen: string | boolean | undefined;
+
   setSidebarOpen: (arg0: boolean) => void;
 }) => {
+  const [pageName, setPageName] = useLocalStorage("selectedMenu", "dashboard");
   return (
     <header className="sticky top-0 z-999 flex w-full bg-white drop-shadow-1 dark:bg-boxdark dark:drop-shadow-none">
       <div className="flex flex-grow items-center justify-between px-4 py-4 shadow-2 md:px-6 2xl:px-11">
@@ -106,20 +109,29 @@ const Header = (props: {
         <div className="flex items-center gap-3 2xsm:gap-7">
           <ul className="flex items-center gap-2 2xsm:gap-4">
             {/* <!-- Dark Mode Toggler --> */}
+
+            <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
+              <span className="rounded-lg border border-white bg-gray-200 px-8 py-2 text-center text-sm font-medium text-black  focus:outline-none focus:ring-4 ">
+                <Link href={"/auth/signup"} className="">
+                  Sign Up
+                </Link>
+              </span>
+            </div>
+
             <DarkModeSwitcher />
             {/* <!-- Dark Mode Toggler --> */}
 
             {/* <!-- Notification Menu Area --> */}
-            <DropdownNotification />
+            {/* <DropdownNotification /> */}
             {/* <!-- Notification Menu Area --> */}
 
             {/* <!-- Chat Notification Area --> */}
-            <DropdownMessage />
+            {/* <DropdownMessage /> */}
             {/* <!-- Chat Notification Area --> */}
           </ul>
 
           {/* <!-- User Area --> */}
-          <DropdownUser />
+          {/* <DropdownUser /> */}
           {/* <!-- User Area --> */}
         </div>
       </div>
