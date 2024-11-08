@@ -110,13 +110,13 @@ const Header = (props: {
           <ul className="flex items-center gap-2 2xsm:gap-4">
             {/* <!-- Dark Mode Toggler --> */}
 
-            <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
+            {/* <div className="flex space-x-3 md:order-2 md:space-x-0 rtl:space-x-reverse">
               <span className="rounded-lg border border-white bg-gray-200 px-8 py-2 text-center text-sm font-medium text-black  focus:outline-none focus:ring-4 ">
                 <Link href={"/auth/signup"} className="">
                   Sign Up
                 </Link>
               </span>
-            </div>
+            </div> */}
 
             <DarkModeSwitcher />
             {/* <!-- Dark Mode Toggler --> */}
