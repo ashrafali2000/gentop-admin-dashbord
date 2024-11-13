@@ -1,1 +1,1 @@
-create gentop-admin-dashboard
+gentop-admin-dashboard
